@@ -133,11 +133,75 @@ header .top-bar .social li a {
 	display: inline-block;
 }
 
+/* Animation */
+@keyframes scroll {
+	0% {
+		transform: translateX(calc(320px * 4));
+	}
+	100% {
+		transform: translateX(calc(-320px * 6));
+	}
+}
+
+/* Styling */
+#logos-home-page .slider {
+	height: auto;
+	margin: auto;
+	overflow: hidden;
+	position: relative;
+	width: 100%;
+}
+
+#logos-home-page .slider:before,
+#logos-home-page .slider:after {
+	background: linear-gradient(
+		to right,
+		rgba(255, 255, 255, 1) 0%,
+		rgba(255, 255, 255, 0) 100%
+	);
+	content: "";
+	height: 320px;
+	position: absolute;
+	width: 200px;
+	z-index: 2;
+}
+
+#logos-home-page .slider:after {
+	right: 0;
+	top: 0;
+	transform: rotateZ(180deg);
+}
+
+#logos-home-page .slider:before {
+	left: 0;
+	top: 0;
+}
+
+#logos-home-page .slide-track {
+	animation: scroll 15s linear infinite; /* Adjusted animation time for 5 elements */
+	display: flex;
+	width: calc(320px * 5); /* Adjusted width for 5 elements */
+}
+
+#logos-home-page div.slide {
+	padding: 0 12px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
 @media (max-width: 991px) {
 	header .top-bar .social li a {
 		padding-left: 10px;
 		padding-right: 10px;
 		width: inherit;
+	}
+
+	#logos-home-page .slider:after {
+		width: 40px;
+	}
+	#logos-home-page .slider:before {
+		width: 40px;
 	}
 }
 

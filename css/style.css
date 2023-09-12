@@ -136,7 +136,7 @@ header .top-bar .social li a {
 /* Animation */
 @keyframes scroll {
 	0% {
-		transform: translateX(calc(320px * 4));
+		transform: translateX(calc(320px * 3.5));
 	}
 	100% {
 		transform: translateX(calc(-320px * 6));
@@ -178,7 +178,7 @@ header .top-bar .social li a {
 }
 
 #logos-home-page .slide-track {
-	animation: scroll 15s linear infinite; /* Adjusted animation time for 5 elements */
+	animation: scroll 25s linear infinite; /* Adjusted animation time for 5 elements */
 	display: flex;
 	width: calc(320px * 5); /* Adjusted width for 5 elements */
 }
